@@ -11,16 +11,16 @@ write:
 
 next_byte:
 
-	l32i.n a5, a2, 0
-	addi a2, a2, 4
+	l8ui a5, a2, 0
+	addi a2, a2, 1
 	addi a3, a3, -4
 
 	// Counter for all the bits.
-	movi a6, 32
+	movi a6, 8
 
 next_bit:
 
-	extui a7, a5, 31, 1
+	extui a7, a5, 7, 1
 	slli a5, a5, 1
 	addi a6, a6, -1
 
